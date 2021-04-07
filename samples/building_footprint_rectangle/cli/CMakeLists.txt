@@ -13,4 +13,5 @@ aux_source_directory( ${CMAKE_CURRENT_SOURCE_DIR} CPP )
 add_definitions( ${rjmcmc_DEFINITIONS} ${TIFF_DEFINITIONS})
 add_executable( building_footprint_rectangle_cli ${CPP} ${HPP} )
 target_link_libraries( building_footprint_rectangle_cli ${rjmcmc_LIBRARIES} ${TIFF_LIBRARIES} ${LIBSHP_LIBRARIES})
+target_link_libraries( building_footprint_rectangle_cli libshp.a)
 
