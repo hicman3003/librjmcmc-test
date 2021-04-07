@@ -11,6 +11,12 @@ RUN apt-get -y -qq update && apt-get -y --fix-missing install $BUILD_PACKAGES \
 &&  cmake ..\
 &&  make\
 &&  cd ../..\
+&&  git clone https://github.com/IGNF/gilviewer.git \
+&&  cd gilviewer \
+&&  mkdir build \
+&&  cd build \
+&&  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS=-Wno-unused-local-typedefs .. \
+&&  make install \
 &&  git clone https://github.com/hicman3003/librjmcmc-test.git \
 &&  cd librjmcmc-test \
 &&  mkdir build \
