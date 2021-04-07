@@ -11,17 +11,17 @@ RUN apt-get -y -qq update && apt-get -y --fix-missing install $BUILD_PACKAGES \
 &&  cmake ..\
 &&  make\
 &&  cd ../..\
-&&  git clone https://github.com/hicman3003/librjmcmc.git \
-&&  cd librjmcmc \
+&&  git clone https://github.com/hicman3003/librjmcmc-test.git \
+&&  cd librjmcmc-test \
 &&  mkdir build \
 &&  cd build \
 &&  cmake -DCMAKE_BUILD_TYPE=Release .. \
 &&  make install
 
-RUN mv librjmcmc/samples/data  /usr/local/share/librjmcmc \
-&&  mv librjmcmc/build/samples/quickstart/quickstart /usr/local/bin \
-&&  cp librjmcmc/build/samples/building_footprint_rectangle/cli/building_footprint_rectangle_cli /usr/local/bin\
-&&  cp librjmcmc/build/samples/building_footprint_rectangle/gui/building_footprint_rectangle_gui /usr/local/bin\
+RUN mv librjmcmc-test/samples/data  /usr/local/share/librjmcmc \
+&&  mv librjmcmc-test/build/samples/quickstart/quickstart /usr/local/bin \
+&&  cp librjmcmc-test/build/samples/building_footprint_rectangle/cli/building_footprint_rectangle_cli /usr/local/bin\
+&&  cp librjmcmc-test/build/samples/building_footprint_rectangle/gui/building_footprint_rectangle_gui /usr/local/bin\
 &&  AUTO_ADDED_PACKAGES=`apt-mark showauto` \
 &&  apt-get remove --purge -y $BUILD_PACKAGES $AUTO_ADDED_PACKAGES \
 &&  apt-get -y --fix-missing install $RUNTIME_PACKAGES \
