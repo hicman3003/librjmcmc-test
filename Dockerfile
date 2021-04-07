@@ -11,7 +11,7 @@ RUN apt-get -y -qq update && apt-get -y --fix-missing install $BUILD_PACKAGES \
 &&  cmake ..\
 &&  make\
 &&  cd ../..\
-&&  &&  git clone https://github.com/hicman3003/librjmcmc.git \
+&&  git clone https://github.com/hicman3003/librjmcmc.git \
 &&  cd librjmcmc \
 &&  mkdir build \
 &&  cd build \
